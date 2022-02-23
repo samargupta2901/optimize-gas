@@ -1,0 +1,27 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.8.1;
+
+contract MemoryAccess {
+    
+    uint8 resulta = 0;
+    uint resultb = 0;
+    
+    function UseUint() external returns (uint) {
+        uint selectedRange = 50;
+        uint resultbMem = resultb;  //memory_access
+        for (uint i=0; i < selectedRange; i++) {
+            resultbMem += 1;
+        }
+        return resultbMem;
+    }
+    
+    function UseUInt8() external returns (uint8){
+        uint8 selectedRange = 50;
+        uint8 resultaMem = resulta; //memory_access
+        for (uint8 i=0; i < selectedRange; i++) {
+            resultaMem += 1;
+        }
+        return resultaMem;
+    }
+}
